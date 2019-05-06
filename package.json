@@ -1,0 +1,14 @@
+{
+  "name": "silex-npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "silex-website-builder": "^2.5.10"
+  }
+}

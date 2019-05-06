@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login Form For A Custom Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <form action="/ce/custom-service/login_callback" method="post" accept-charset="utf-8">
+    <h1>Unifile would like access to your files and folders.</h1>
+    <p>This is an example of a custom service. All the username work with the <strong>password "pass"</strong></p>
+    <div>
+      <label for="user">username</label>
+      <input type="text" name="user" placeholder="user" id="user">
+    </div>
+    <div>
+      <label for="password">password</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <div>
+      <input type="submit" name="submit" value="Log in" id="submit">
+    </div>
+  </form>
+</body>
+</html>

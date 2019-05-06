@@ -1,14 +1,14 @@
 {
-  "name": "silex-npm",
+  "name": "custom-silex",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "lexoyo",
+  "license": "MIT",
   "dependencies": {
-    "silex-website-builder": "^2.5.10"
+    "silex-website-builder": "^2.5.11"
   }
 }

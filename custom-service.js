@@ -36,7 +36,9 @@ class CustomService extends FsConnector {
       // store the user
       session.user = loginInfos.user;
       // create the user's directory if it does not exist already
-      return this.mkdir(session, '').catch((e) => session)
+      return this.mkdir(session, '')
+      .then(() => this.mkdir(session, 'Website'))
+      .catch((e) => session);
     }
     // logout if pass is not correct
     session.user = null;

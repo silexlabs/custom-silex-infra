@@ -6,9 +6,13 @@
   "scripts": {
     "start": "node index.js"
   },
+  "dependencies": {
+    "silex-website-builder": "*"
+  },
   "author": "lexoyo",
   "license": "MIT",
-  "dependencies": {
-    "silex-website-builder": "^2.5.11"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:silexlabs/custom-silex-templates.git"
   }
 }

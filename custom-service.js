@@ -1,4 +1,5 @@
 const { FsConnector } = require('unifile');
+const fs = require('fs')
 
 /**
  * Service connector extends the local filesystem connector (unifile-fs)
@@ -49,7 +50,12 @@ class CustomService extends FsConnector {
   readdir(session, path) { return super.readdir(session, `/tmp/${ session.user }/${ path }`) }
   stat(session, path) { return super.stat(session, `/tmp/${ session.user }/${ path }`) }
   mkdir(session, path) { return super.mkdir(session, `/tmp/${ session.user }/${ path }`) }
-  writeFile(session, path, data) { return super.writeFile(session, `/tmp/${ session.user }/${ path }`, data) }
+  writeFile(session, path, data) {
+    return super.writeFile(session, `/tmp/${ session.user }/${ path }`, data)
+    .then(function() {
+      fs.copyFileSync(`/tmp/${ session.user }/${ path }`, `/tmp/${ session.user }/${ path }.bkp`)
+    })
+  }
   createWriteStream(session, path) { return super.createWriteStream(session, `/tmp/${ session.user }/${ path }`) }
   readFile(session, path) { return super.readFile(session, `/tmp/${ session.user }/${ path }`) }
   createReadStream(session, path) { return super.createReadStream(session, `/tmp/${ session.user }/${ path }`) }
